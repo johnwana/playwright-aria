@@ -1,0 +1,17 @@
+{
+  "compilerOptions": {
+    "rootDir": "./src",
+    "outDir": "./dist",
+    "target": "ES2019",
+    "module": "commonjs",
+    "lib": ["esnext", "dom", "DOM.Iterable"],
+    "baseUrl": ".",
+    "declaration": true,
+    "esModuleInterop": true,
+    "strict": true,
+    "allowJs": true,
+    "noImplicitOverride": true,
+    "useUnknownInCatchVariables": false,
+  },
+  "include": ["src/**/*"],
+}
