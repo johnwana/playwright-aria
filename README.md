@@ -8,12 +8,14 @@ Exposes the [`ByRole`](https://testing-library.com/docs/queries/byrole) function
 
 ## Get started
 - Install the package: `npm i -D playwright-aria`
-- Look at the files in the test directory for examples. Roughly it's:
+- Follow the files in the test directory for examples on how to integrtae. Roughly it's:
   - import the package: `import createAriaEngine from 'playwright-aria';`
-  - install the engine: `await selectors.register('aria', createAriaEngine, { contentScript: false });`
+  - register the engine before using the aria selector: `await selectors.register('aria', createAriaEngine, { contentScript: false });`
     - Note: I often do this in [`test.beforeAll`](https://playwright.dev/docs/api/class-test#test-before-all)
   - use it in a test: `await expect(page.locator('aria=button(/test button/)')).toBeVisible();`
 
-## Examples
-- `page.locator('aria=button')  // find all elements with the role "button"`
-- `page.locator('aria=button(/test button/)')   // find the element with the role "button" and the name matches the regex /test button/i (all regex are case insensitive for now)`
+## Examples using the aria selector
+- locate all elements with the role "button"
+  - `page.locator('aria=button')`
+- locate the element with the role "button" and the name matches the regex /test button/i (all regex are case insensitive for now)
+  - `page.locator('aria=button(/test button/)')`
